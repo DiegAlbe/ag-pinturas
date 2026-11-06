@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrés González | Pintura, Revestimientos e Impermeabilización</title>
+    <meta name="description" content="Más de 25 años de trayectoria en pintura, revestimientos, impermeabilización y obras en general en Concepción del Uruguay y alrededores.">
+    <!-- Tailwind CSS v4 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cormorant Garamond (Serif elegante acorde al logo) + Inter (Lectura limpia) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#111827',
+                            green: '#00873e',
+                            greenHover: '#006d31',
+                            blue: '#0055a5',
+                            accent: '#e63946',
+                            grayBg: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-800 font-sans antialiased selection:bg-brand-green selection:text-white">
+
+    <!-- WHATSAPP FLOTANTE -->
+    <a href="https://wa.me/5493442546737?text=Hola%20Andrés,%20estuve%20visitando%20tu%20web%20y%20quisiera%20consultar%20por%20un%20presupuesto." target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition duration-300 flex items-center justify-center group" aria-label="Consultar por WhatsApp">
+        <i class="fab fa-whatsapp text-3xl"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-500 ease-in-out bg-gray-900 text-white text-xs font-semibold py-1.5 px-3 rounded-l-full -ml-4 mr-2 shadow-md">¡Escribinos por WhatsApp!</span>
+    </a>
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <!-- Logo oficial -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="tarjeta-andres.webp" alt="Andrés González Logotipo" class="h-16 w-auto object-contain transition duration-300 group-hover:scale-105">
+            </a>
+
+            <!-- Navegación escritorio -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-700">
+                <a href="#servicios" class="hover:text-brand-green transition">Servicios</a>
+                <a href="#calculadora" class="hover:text-brand-green transition">Calculadora</a>
+                <a href="#portfolio" class="hover:text-brand-green transition">Trabajos Realizados</a>
+                <a href="#escalas" class="hover:text-brand-green transition">Trayectoria</a>
+                <a href="#contacto" class="hover:text-brand-green transition">Contacto</a>
+            </nav>
+
+            <!-- CTA Cabecera -->
+            <div class="hidden lg:flex items-center gap-4">
+                <div class="text-right">
+                    <span class="block text-xs text-gray-500 font-medium">Atención directa</span>
+                    <span class="block text-sm font-bold text-gray-900">3442 546737</span>
+                </div>
+                <a href="https://wa.me/5493442546737" target="_blank" class="bg-brand-green hover:bg-brand-greenHover text-white font-semibold px-5 py-2.5 rounded-xl text-sm shadow-md transition flex items-center gap-2">
+                    <i class="fab fa-whatsapp text-lg"></i> Consultar
+                </a>
+            </div>
+
+            <!-- Botón Menú Móvil -->
+            <button id="menu-btn" class="md:hidden text-gray-700 text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menú Móvil desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-6 py-4 space-y-3 font-medium">
+            <a href="#servicios" class="block text-gray-700 hover:text-brand-green py-1">Servicios</a>
+            <a href="#calculadora" class="block text-gray-700 hover:text-brand-green py-1">Calculadora</a>
+            <a href="#portfolio" class="block text-gray-700 hover:text-brand-green py-1">Trabajos Realizados</a>
+            <a href="#escalas" class="block text-gray-700 hover:text-brand-green py-1">Trayectoria</a>
+            <a href="#contacto" class="block text-gray-700 hover:text-brand-green py-1">Contacto</a>
+            <div class="pt-2 border-t border-gray-100 flex items-center justify-between">
+                <span class="text-sm font-bold text-gray-800">3442 546737</span>
+                <a href="https://wa.me/5493442546737" target="_blank" class="bg-brand-green text-white text-sm font-semibold px-4 py-2 rounded-lg">WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECCIÓN 1 — HERO / PORTADA PRINCIPAL -->
+        <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-gradient-to-b from-gray-50 to-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 bg-emerald-50 text-brand-green border border-emerald-200 px-4 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase">
+                            <i class="fas fa-certificate"></i> +25 Años de Experiencia en Concepción del Uruguay
+                        </div>
+                        
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-serif text-gray-900 leading-tight">
+                            Experiencia, responsabilidad y <span class="text-brand-green">calidad</span> en cada trabajo.
+                        </h1>
+                        
+                        <p class="text-lg text-gray-600 font-normal leading-relaxed max-w-2xl">
+                            Más de 25 años brindando soluciones en pintura, revestimientos e impermeabilización en Concepción del Uruguay y alrededores.
+                        </p>
+
+                        <!-- Lista de atributos rápida -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm font-semibold text-gray-800">
+                            <div class="flex items-center gap-2.5">
+                                <span class="w-6 h-6 rounded-full bg-brand-green text-white flex items-center justify-center text-xs"><i class="fas fa-check"></i></span>
+                                Revestimientos y texturados
+                            </div>
+                            <div class="flex items-center gap-2.5">
+                                <span class="w-6 h-6 rounded-full bg-brand-green text-white flex items-center justify-center text-xs"><i class="fas fa-check"></i></span>
+                                Impermeabilización de techos y muros
+                            </div>
+                            <div class="flex items-center gap-2.5">
+                                <span class="w-6 h-6 rounded-full bg-brand-green text-white flex items-center justify-center text-xs"><i class="fas fa-check"></i></span>
+                                Trabajos de pintura interior y exterior
+                            </div>
+                            <div class="flex items-center gap-2.5">
+                                <span class="w-6 h-6 rounded-full bg-brand-green text-white flex items-center justify-center text-xs"><i class="fas fa-check"></i></span>
+                                Obras y mantenimiento en general
+                            </div>
+                        </div>
+
+                        <!-- CTAs -->
+                        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                            <a href="https://wa.me/5493442546737?text=Hola%20Andrés,%20quiero%20consultar%20por%20un%20presupuesto." target="_blank" class="bg-brand-green hover:bg-brand-greenHover text-white font-bold py-4 px-8 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 flex items-center justify-center gap-3 text-base">
+                                <i class="fab fa-whatsapp text-2xl"></i> Consultar por WhatsApp
+                            </a>
+                            <a href="#servicios" class="border-2 border-gray-300 hover:border-gray-900 text-gray-800 font-bold py-4 px-8 rounded-2xl transition duration-300 flex items-center justify-center gap-2 text-base">
+                                Conocer nuestros servicios <i class="fas fa-arrow-down text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Columna de Imagen Hero -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative mx-auto max-w-md lg:max-w-none">
+                            <div class="relative bg-white border border-gray-200 p-6 rounded-3xl shadow-2xl space-y-6">
+                                <div class="flex justify-center border-b border-gray-100 pb-4">
+                                    <img src="tarjeta-andres.webp" alt="Andrés González Logotipo" class="h-24 object-contain">
+                                </div>
+                                <div class="relative rounded-2xl overflow-hidden shadow-inner group">
+                                    <img src="andres.webp" alt="Pintor profesional trabajando" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+                                        <div class="text-white">
+                                            <p class="text-xs uppercase tracking-wider font-bold text-emerald-400">Trayectoria comprobable</p>
+                                            <p class="text-xl font-bold font-serif">+25 años transformando espacios</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-2xl border border-gray-200 flex items-center justify-between">
+                                    <div>
+                                        <p class="text-xs text-gray-500 font-medium">Ubicación principal</p>
+                                        <p class="text-sm font-bold text-gray-900"><i class="fas fa-map-marker-alt text-brand-green mr-1"></i> Concepción del Uruguay, Entre Ríos</p>
+                                    </div>
+                                    <a href="tel:3442546737" class="bg-gray-900 text-white p-3 rounded-xl hover:bg-brand-green transition"><i class="fas fa-phone-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2 — EXPERIENCIA Y DIFERENCIALES -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <h2 class="text-4xl sm:text-5xl font-extrabold font-serif text-gray-900">
+                        Experiencia que se refleja en cada trabajo.
+                    </h2>
+                    <p class="text-gray-600 text-base sm:text-lg">
+                        Los pilares que sostienen nuestro compromiso diario con particulares, empresas e instituciones.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-gray-50 border border-gray-200 rounded-3xl p-8 hover:shadow-xl transition duration-300 relative group">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-brand-green flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-brand-green group-hover:text-white transition duration-300">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-serif text-gray-900 mb-3">+25 Años</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Trayectoria y conocimiento en trabajos de pintura, revestimientos e impermeabilización.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 border border-gray-200 rounded-3xl p-8 hover:shadow-xl transition duration-300 relative group">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-brand-green flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-brand-green group-hover:text-white transition duration-300">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-serif text-gray-900 mb-3">Responsabilidad</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Compromiso con cada proyecto, independientemente de su dimensión.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 border border-gray-200 rounded-3xl p-8 hover:shadow-xl transition duration-300 relative group">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-brand-green flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-brand-green group-hover:text-white transition duration-300">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-serif text-gray-900 mb-3">Seriedad</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Trato profesional, atención personalizada y cumplimiento de lo acordado.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 border border-gray-200 rounded-3xl p-8 hover:shadow-xl transition duration-300 relative group">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-brand-green flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-brand-green group-hover:text-white transition duration-300">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-serif text-gray-900 mb-3">Calidad</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Cuidado de los detalles y compromiso con las terminaciones.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3 — SERVICIOS -->
+        <section id="servicios" class="py-20 bg-gray-50 border-t border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-green bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Nuestras Especialidades</span>
+                    <h2 class="text-4xl sm:text-5xl font-extrabold font-serif text-gray-900">
+                        Servicios ofrecidos.
+                    </h2>
+                    <p class="text-gray-600 text-base">
+                        Soluciones a medida para clientes particulares, empresas e instituciones.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Servicio 1 -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="revestimiento.jpg" alt="Revestimientos" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-lg text-xs font-bold text-gray-900">
+                                    <i class="fas fa-check-circle text-brand-green mr-1"></i> Servicio Destacado
+                                </div>
+                            </div>
+                            <div class="p-8 space-y-4">
+                                <h3 class="text-3xl font-bold font-serif text-gray-900">1. Revestimientos</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    Aplicación de revestimientos y renovación de superficies para mejorar y transformar distintos espacios.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-8 pb-8 pt-0">
+                            <a href="https://wa.me/5493442546737?text=Hola%20Andrés,%20quiero%20consultar%20por%20el%20servicio%20de%20Revestimientos." target="_blank" class="w-full bg-gray-100 hover:bg-brand-green hover:text-white text-gray-900 font-bold py-3 px-6 rounded-xl transition duration-300 flex items-center justify-center gap-2 text-sm">
+                                <i class="fab fa-whatsapp text-lg"></i> Consultar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 2 -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="pintor-loza.webp" alt="Impermeabilización" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-lg text-xs font-bold text-gray-900">
+                                    <i class="fas fa-check-circle text-brand-green mr-1"></i> Protección Total
+                                </div>
+                            </div>
+                            <div class="p-8 space-y-4">
+                                <h3 class="text-3xl font-bold font-serif text-gray-900">2. Impermeabilización</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    Trabajos destinados a proteger superficies contra la humedad y las filtraciones.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-8 pb-8 pt-0">
+                            <a href="https://wa.me/5493442546737?text=Hola%20Andrés,%20quiero%20consultar%20por%20el%20servicio%20de%20Impermeabilización." target="_blank" class="w-full bg-gray-100 hover:bg-brand-green hover:text-white text-gray-900 font-bold py-3 px-6 rounded-xl transition duration-300 flex items-center justify-center gap-2 text-sm">
+                                <i class="fab fa-whatsapp text-lg"></i> Consultar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 3 -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="images.webp" alt="Trabajos de Pintura" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-lg text-xs font-bold text-gray-900">
+                                    <i class="fas fa-check-circle text-brand-green mr-1"></i> Terminación Fina
+                                </div>
+                            </div>
+                            <div class="p-8 space-y-4">
+                                <h3 class="text-3xl font-bold font-serif text-gray-900">3. Trabajos de Pintura</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    Servicios de pintura para interiores, exteriores y diferentes superficies.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-8 pb-8 pt-0">
+                            <a href="https://wa.me/5493442546737?text=Hola%20Andrés,%20quiero%20consultar%20por%20Trabajos%20de%20Pintura." target="_blank" class="w-full bg-gray-100 hover:bg-brand-green hover:text-white text-gray-900 font-bold py-3 px-6 rounded-xl transition duration-300 flex items-center justify-center gap-2 text-sm">
+                                <i class="fab fa-whatsapp text-lg"></i> Consultar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 4 -->
+                    <div class="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="relative h-56 overflow-hidden">
+                                <img src="frente-edificio.webp" alt="Hogar y Obras en General" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-lg text-xs font-bold text-gray-900">
+                                    <i class="fas fa-check-circle text-brand-green mr-1"></i> Solución Integral
+                                </div>
+                            </div>
+                            <div class="p-8 space-y-4">
+                                <h3 class="text-3xl font-bold font-serif text-gray-900">4. Hogar y Obras en General</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    Trabajos de mantenimiento, renovación y proyectos de diferentes dimensiones.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-8 pb-8 pt-0">
+                            <a href="https://wa.me/5493442546737?text=Hola%20Andrés,%20quiero%20consultar%20por%20Obras%20y%20Mantenimiento%20en%20General." target="_blank" class="w-full bg-gray-100 hover:bg-brand-green hover:text-white text-gray-900 font-bold py-3 px-6 rounded-xl transition duration-300 flex items-center justify-center gap-2 text-sm">
+                                <i class="fab fa-whatsapp text-lg"></i> Consultar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4 — CALCULADORA DE PRESUPUESTO ESTIMATIVO -->
+        <section id="calculadora" class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-gray-900 text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+                    
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 border-b border-gray-800 pb-6">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Herramienta Interactiva</span>
+                            <h2 class="text-3xl sm:text-4xl font-extrabold font-serif mt-1">¿Tenés un proyecto en mente? Calculá cuánto podría costar.</h2>
+                        </div>
+                        <button onclick="openConfigModal()" class="bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white px-4 py-2.5 rounded-xl text-xs font-semibold border border-gray-700 transition flex items-center gap-2 shrink-0">
+                            <i class="fas fa-cog"></i> Configurar precios m²
+                        </button>
+                    </div>
+
+                    <p class="text-gray-300 text-sm mb-8">
+                        Conocé una estimación inicial de tu trabajo ingresando los metros cuadrados y seleccionando el servicio que necesitás.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">1. Seleccioná el tipo de trabajo</label>
+                                <select id="calc-service" onchange="calculateBudget()" class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3.5 text-white font-medium focus:outline-none focus:border-brand-green transition">
+                                    <option value="pintura">Pintura</option>
+                                    <option value="revestimientos">Revestimientos</option>
+                                    <option value="impermeabilizacion">Impermeabilización</option>
+                                    <option value="general">Hogar y Obras en General</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">2. Ingresá la superficie en metros cuadrados (m²)</label>
+                                <div class="relative">
+                                    <input type="number" id="calc-sqm" min="1" value="50" oninput="calculateBudget()" class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3.5 text-white font-bold text-lg focus:outline-none focus:border-brand-green transition">
+                                    <div class="absolute right-4 top-3.5 text-gray-400 font-bold">m²</div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">Tu Nombre (opcional para el mensaje)</label>
+                                <input type="text" id="calc-name" placeholder="Ej. Juan Pérez" class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-green transition">
+                            </div>
+                        </div>
+
+                        <!-- Resultados -->
+                        <div class="bg-gray-800 border border-gray-700 rounded-2xl p-6 flex flex-col justify-between space-y-6">
+                            <div>
+                                <p class="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-2">Presupuesto Estimativo</p>
+                                <div id="calc-result-box" class="space-y-1">
+                                    <span id="calc-total" class="text-3xl sm:text-4xl font-extrabold text-emerald-400">$0</span>
+                                    <p id="calc-details" class="text-xs text-gray-400 pt-2">Calculando...</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-3">
+                                <a id="whatsapp-calc-btn" href="#" target="_blank" class="w-full bg-brand-green hover:bg-emerald-600 text-white font-bold py-4 px-6 rounded-xl shadow-lg transition duration-300 flex items-center justify-center gap-2 text-center text-sm">
+                                    <i class="fab fa-whatsapp text-xl"></i> Solicitar presupuesto definitivo por WhatsApp
+                                </a>
+                                <p class="text-[11px] text-gray-400 leading-tight">
+                                    * El cálculo es orientativo y no constituye un presupuesto definitivo. El valor final dependerá de las condiciones de la superficie, los materiales necesarios y una evaluación particular del proyecto.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5 — TRABAJOS REALIZADOS / PORTFOLIO -->
+        <section id="portfolio" class="py-20 bg-gray-50 border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-green bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Galería Visual</span>
+                    <h2 class="text-4xl sm:text-5xl font-extrabold font-serif text-gray-900">
+                        Cada proyecto, una nueva oportunidad para demostrar experiencia.
+                    </h2>
+                    <p class="text-gray-600 text-base">
+                        Muestra de trabajos realizados en viviendas, comercios e instituciones.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer" onclick="openLightbox(this)">
+                        <div class="relative h-72 overflow-hidden">
+                            <img src="mamposteria-reparada.webp" alt="Restauración Institucional" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                                <span class="text-white text-sm font-bold flex items-center gap-2"><i class="fas fa-search-plus"></i> Ampliar fotografía</span>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <span class="text-xs font-bold uppercase text-brand-blue bg-blue-50 px-2.5 py-1 rounded-md">Institucional / Balustradas</span>
+                            <h3 class="text-2xl font-bold font-serif text-gray-900">Restauración de Fachada</h3>
+                            <p class="text-gray-600 text-sm">Intervención en edificio histórico, balustradas y molduras artesanales.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer" onclick="openLightbox(this)">
+                        <div class="relative h-72 overflow-hidden">
+                            <img src="frente-escuela.webp" alt="Pintura Edificio" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                                <span class="text-white text-sm font-bold flex items-center gap-2"><i class="fas fa-search-plus"></i> Ampliar fotografía</span>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <span class="text-xs font-bold uppercase text-brand-green bg-emerald-50 px-2.5 py-1 rounded-md">Edificios / Altura</span>
+                            <h3 class="text-2xl font-bold font-serif text-gray-900">Pintura Exterior y Protecciones</h3>
+                            <p class="text-gray-600 text-sm">Pintura integral de frentes y medianeras en complejos residenciales.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer" onclick="openLightbox(this)">
+                        <div class="relative h-72 overflow-hidden">
+                            <img src="mamposteria.webp" alt="Albañilería y Estructura" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                                <span class="text-white text-sm font-bold flex items-center gap-2"><i class="fas fa-search-plus"></i> Ampliar fotografía</span>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <span class="text-xs font-bold uppercase text-amber-600 bg-amber-50 px-2.5 py-1 rounded-md">Albañilería Tradicional</span>
+                            <h3 class="text-2xl font-bold font-serif text-gray-900">Reconstrucción de Mampostería</h3>
+                            <p class="text-gray-600 text-sm">Reparaciones de albañilería y nivelación de antepechos previa a la terminación.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer" onclick="openLightbox(this)">
+                        <div class="relative h-72 overflow-hidden">
+                            <img src="pintor-loza.webp" alt="Impermeabilización de Terrazas" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                                <span class="text-white text-sm font-bold flex items-center gap-2"><i class="fas fa-search-plus"></i> Ampliar fotografía</span>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <span class="text-xs font-bold uppercase text-brand-green bg-emerald-50 px-2.5 py-1 rounded-md">Impermeabilización</span>
+                            <h3 class="text-2xl font-bold font-serif text-gray-900">Protección de Losas y Techos</h3>
+                            <p class="text-gray-600 text-sm">Sellado y membranas líquidas de máxima resistencia.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer" onclick="openLightbox(this)">
+                        <div class="relative h-72 overflow-hidden">
+                            <img src="revestimiento.jpg" alt="Pintura de Interiores" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                                <span class="text-white text-sm font-bold flex items-center gap-2"><i class="fas fa-search-plus"></i> Ampliar fotografía</span>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <span class="text-xs font-bold uppercase text-brand-blue bg-blue-50 px-2.5 py-1 rounded-md">Interiores Viviendas</span>
+                            <h3 class="text-2xl font-bold font-serif text-gray-900">Pintura Fina para Hogar</h3>
+                            <p class="text-gray-600 text-sm">Preparación de muros, enduido y pintura latex lavable.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl transition duration-300 group cursor-pointer" onclick="openLightbox(this)">
+                        <div class="relative h-72 overflow-hidden">
+                            <img src="images.webp" alt="Revestimientos texturados" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                                <span class="text-white text-sm font-bold flex items-center gap-2"><i class="fas fa-search-plus"></i> Ampliar fotografía</span>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <span class="text-xs font-bold uppercase text-brand-accent bg-rose-50 px-2.5 py-1 rounded-md">Revestimientos</span>
+                            <h3 class="text-2xl font-bold font-serif text-gray-900">Revestimiento Plástico Texturado</h3>
+                            <p class="text-gray-600 text-sm">Aplicación de revestimiento impermeable de textura fina y media.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 6 — EXPERIENCIA EN DIFERENTES ESCALAS -->
+        <section id="escalas" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-gray-50 border border-gray-200 rounded-3xl p-8 sm:p-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-6 space-y-6">
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-green bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Capacidad Operativa</span>
+                        <h2 class="text-4xl sm:text-5xl font-extrabold font-serif text-gray-900">
+                            De un pequeño trabajo en tu hogar a grandes proyectos.
+                        </h2>
+                        <p class="text-gray-600 text-base leading-relaxed">
+                            Más de 25 años de experiencia nos permiten abordar trabajos de distintas dimensiones. Atendemos tanto las necesidades de clientes particulares como los requerimientos de empresas e instituciones, con la misma responsabilidad, seriedad y compromiso con la calidad.
+                        </p>
+                        <div class="space-y-3 pt-2">
+                            <div class="flex items-center gap-3 text-gray-800 font-semibold text-sm">
+                                <span class="w-6 h-6 rounded-full bg-brand-green text-white flex items-center justify-center text-xs"><i class="fas fa-check"></i></span>
+                                Clientes particulares y viviendas
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-800 font-semibold text-sm">
+                                <span class="w-6 h-6 rounded-full bg-brand-green text-white flex items-center justify-center text-xs"><i class="fas fa-check"></i></span>
+                                Empresas y comercios
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-800 font-semibold text-sm">
+                                <span class="w-6 h-6 rounded-full bg-brand-green text-white flex items-center justify-center text-xs"><i class="fas fa-check"></i></span>
+                                Instituciones educativas y organismos
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-6">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="space-y-4">
+                                <img src="revestimiento.jpg" alt="Trabajo residencial" class="rounded-2xl shadow-md h-48 w-full object-cover">
+                                <img src="frente-escuela.webp" alt="Obra institucional" class="rounded-2xl shadow-md h-56 w-full object-cover">
+                            </div>
+                            <div class="space-y-4 pt-6">
+                                <img src="frente-edificio.webp" alt="Edificio" class="rounded-2xl shadow-md h-56 w-full object-cover">
+                                <img src="mamposteria-rota.webp" alt="Obras generales" class="rounded-2xl shadow-md h-48 w-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 7 — TESTIMONIOS -->
+        <section class="py-20 bg-gray-50 border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-green bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Opiniones</span>
+                    <h2 class="text-4xl sm:text-5xl font-extrabold font-serif text-gray-900">
+                        La confianza también se construye con cada trabajo.
+                    </h2>
+                    <p class="text-gray-600 text-base">
+                        Espacio preparado para incorporar testimonios de clientes reales.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm space-y-4 relative">
+                        <div class="text-brand-green text-4xl font-serif font-bold">“</div>
+                        <p class="text-gray-600 text-sm italic">
+                            [ Placeholder para testimonio real de cliente particular ].
+                        </p>
+                        <div class="pt-4 border-t border-gray-100">
+                            <p class="font-bold text-gray-900 text-sm">Cliente Particular</p>
+                            <p class="text-xs text-gray-400">Concepción del Uruguay</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm space-y-4 relative">
+                        <div class="text-brand-green text-4xl font-serif font-bold">“</div>
+                        <p class="text-gray-600 text-sm italic">
+                            [ Placeholder para testimonio de empresa o consorcio ].
+                        </p>
+                        <div class="pt-4 border-t border-gray-100">
+                            <p class="font-bold text-gray-900 text-sm">Empresa / Consorcio</p>
+                            <p class="text-xs text-gray-400">Concepción del Uruguay</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm space-y-4 relative">
+                        <div class="text-brand-green text-4xl font-serif font-bold">“</div>
+                        <p class="text-gray-600 text-sm italic">
+                            [ Placeholder para testimonio institucional ].
+                        </p>
+                        <div class="pt-4 border-t border-gray-100">
+                            <p class="font-bold text-gray-900 text-sm">Institución Educativa</p>
+                            <p class="text-xs text-gray-400">Entre Ríos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 8 — CONTACTO -->
+        <section id="contacto" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <div class="lg:col-span-5 space-y-6">
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-green bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Contacto Directo</span>
+                        <h2 class="text-4xl sm:text-5xl font-extrabold font-serif text-gray-900">
+                            ¿Tenés un proyecto en mente?
+                        </h2>
+                        <p class="text-gray-600 text-base leading-relaxed">
+                            Contanos qué trabajo necesitás realizar. Estamos en Concepción del Uruguay y trabajamos en la ciudad y alrededores.
+                        </p>
+
+                        <div class="space-y-4 pt-4">
+                            <div class="flex items-center gap-4 bg-gray-50 p-4 rounded-2xl border border-gray-200">
+                                <div class="w-12 h-12 bg-emerald-100 text-brand-green rounded-xl flex items-center justify-center text-xl shrink-0">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500 font-medium">WhatsApp</p>
+                                    <a href="https://wa.me/5493442546737" target="_blank" class="text-base font-bold text-gray-900 hover:text-brand-green">3442 546737</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 bg-gray-50 p-4 rounded-2xl border border-gray-200">
+                                <div class="w-12 h-12 bg-blue-100 text-brand-blue rounded-xl flex items-center justify-center text-xl shrink-0">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500 font-medium">Zona de Cobertura</p>
+                                    <p class="text-base font-bold text-gray-900">Concepción del Uruguay y alrededores</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulario de Contacto -->
+                    <div class="lg:col-span-7 bg-gray-50 border border-gray-200 rounded-3xl p-8 sm:p-10 shadow-sm">
+                        <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Tu Nombre</label>
+                                    <input type="text" id="contact-name" required placeholder="Ej. María Gómez" class="w-full bg-white border border-gray-300 rounded-xl px-4 py-3.5 text-gray-900 text-sm focus:outline-none focus:border-brand-green transition">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Teléfono / WhatsApp</label>
+                                    <input type="tel" id="contact-phone" required placeholder="Ej. 3442 123456" class="w-full bg-white border border-gray-300 rounded-xl px-4 py-3.5 text-gray-900 text-sm focus:outline-none focus:border-brand-green transition">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Tipo de Trabajo</label>
+                                    <select id="contact-service" class="w-full bg-white border border-gray-300 rounded-xl px-4 py-3.5 text-gray-900 text-sm focus:outline-none focus:border-brand-green transition">
+                                        <option value="Pintura">Pintura</option>
+                                        <option value="Revestimientos">Revestimientos</option>
+                                        <option value="Impermeabilización">Impermeabilización</option>
+                                        <option value="Hogar y Obras en General">Hogar y Obras en General</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Metros Cuadrados (opcional)</label>
+                                    <input type="number" id="contact-sqm" placeholder="Ej. 70" class="w-full bg-white border border-gray-300 rounded-xl px-4 py-3.5 text-gray-900 text-sm focus:outline-none focus:border-brand-green transition">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Descripción del Proyecto</label>
+                                <textarea id="contact-msg" rows="4" required placeholder="Contanos brevemente sobre el estado de la superficie y lo que necesitás realizar..." class="w-full bg-white border border-gray-300 rounded-xl px-4 py-3.5 text-gray-900 text-sm focus:outline-none focus:border-brand-green transition"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-brand-green hover:bg-emerald-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition duration-300 flex items-center justify-center gap-3 text-base">
+                                <i class="fab fa-whatsapp text-2xl"></i> Enviar consulta por WhatsApp
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SECCIÓN 9 — FOOTER -->
+    <footer class="bg-gray-900 text-white pt-16 pb-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-gray-800">
+                <div class="space-y-4">
+                    <img src="tarjeta-andres.webp" alt="Andrés González" class="h-14 object-contain bg-white p-2 rounded-xl">
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Más de 25 años de experiencia. Responsabilidad y calidad en cada trabajo.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-emerald-400 mb-4">Servicios Principales</h3>
+                    <ul class="space-y-2.5 text-sm text-gray-300">
+                        <li><a href="#servicios" class="hover:text-white transition">Revestimientos</a></li>
+                        <li><a href="#servicios" class="hover:text-white transition">Impermeabilización</a></li>
+                        <li><a href="#servicios" class="hover:text-white transition">Trabajos de pintura</a></li>
+                        <li><a href="#servicios" class="hover:text-white transition">Hogar y obras en general</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-emerald-400 mb-4">Ubicación y Contacto</h3>
+                    <ul class="space-y-2.5 text-sm text-gray-300">
+                        <li><i class="fas fa-map-marker-alt text-brand-green mr-2"></i> Concepción del Uruguay, Entre Ríos</li>
+                        <li><i class="fas fa-phone-alt text-emerald-400 mr-2"></i> 3442 546737</li>
+                        <li><i class="fab fa-whatsapp text-emerald-400 mr-2"></i> WhatsApp: 3442 546737</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-emerald-400 mb-4">Navegación</h3>
+                    <ul class="space-y-2.5 text-sm text-gray-300">
+                        <li><a href="#calculadora" class="hover:text-white transition">Calculadora de Presupuestos</a></li>
+                        <li><a href="#portfolio" class="hover:text-white transition">Trabajos Realizados</a></li>
+                        <li><a href="#escalas" class="hover:text-white transition">Nuestra Trayectoria</a></li>
+                        <li><a href="#contacto" class="hover:text-white transition">Formulario de Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <p>&copy; 2026 Andrés González — Todos los derechos reservados.</p>
+                <p>Pintura, Revestimientos e Impermeabilización | Concepción del Uruguay</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL CONFIGURADOR DE PRECIOS m² -->
+    <div id="config-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs hidden flex items-center justify-center p-4">
+        <div class="bg-gray-900 border border-gray-800 text-white rounded-3xl max-w-md w-full p-8 shadow-2xl space-y-6">
+            <div class="flex justify-between items-center border-b border-gray-800 pb-4">
+                <h3 class="text-2xl font-bold font-serif">Configurar Tarifas por m²</h3>
+                <button onclick="closeConfigModal()" class="text-gray-400 hover:text-white text-xl"><i class="fas fa-times"></i></button>
+            </div>
+            <p class="text-xs text-gray-400">Modificá los precios de referencia por metro cuadrado. Los cambios se guardan automáticamente en tu navegador.</p>
+            
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-1">Pintura ($ / m²)</label>
+                    <input type="number" id="rate-pintura" class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-2.5 text-white font-bold">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-1">Revestimientos ($ / m²)</label>
+                    <input type="number" id="rate-revestimientos" class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-2.5 text-white font-bold">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-1">Impermeabilización ($ / m²)</label>
+                    <input type="number" id="rate-impermeabilizacion" class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-2.5 text-white font-bold">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-1">Hogar y Obras Generales ($ / m²)</label>
+                    <input type="number" id="rate-general" class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-2.5 text-white font-bold">
+                </div>
+            </div>
+
+            <div class="flex gap-4 pt-4">
+                <button onclick="saveRates()" class="flex-1 bg-brand-green hover:bg-emerald-600 text-white font-bold py-3 rounded-xl transition">Guardar Tarifas</button>
+                <button onclick="closeConfigModal()" class="px-5 bg-gray-800 hover:bg-gray-700 text-gray-300 font-bold py-3 rounded-xl transition">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX PARA IMÁGENES DE PORTFOLIO -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-xs hidden flex items-center justify-center p-4" onclick="closeLightbox()">
+        <div class="relative max-w-4xl w-full max-h-[90vh] flex flex-col items-center">
+            <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-white text-3xl hover:text-brand-green"><i class="fas fa-times"></i></button>
+            <img id="lightbox-img" src="" alt="Obra ampliada" class="max-h-[80vh] w-auto object-contain rounded-2xl shadow-2xl">
+            <p id="lightbox-caption" class="text-white text-center mt-4 text-xl font-serif font-bold"></p>
+        </div>
+    </div>
+
+    <!-- SCRIPT DE FUNCIONALIDAD -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const defaultRates = {
+            pintura: 4500,
+            revestimientos: 7500,
+            impermeabilizacion: 6000,
+            general: 8500
+        };
+
+        function getRates() {
+            const saved = localStorage.getItem('ag_rates');
+            return saved ? JSON.parse(saved) : defaultRates;
+        }
+
+        function calculateBudget() {
+            const service = document.getElementById('calc-service').value;
+            const sqm = parseFloat(document.getElementById('calc-sqm').value) || 0;
+            const clientName = document.getElementById('calc-name').value.trim();
+            const rates = getRates();
+            const rate = rates[service] || 0;
+            const total = sqm * rate;
+
+            document.getElementById('calc-total').innerText = '$' + total.toLocaleString('es-AR');
+            
+            const serviceNames = {
+                pintura: 'Pintura',
+                revestimientos: 'Revestimientos',
+                impermeabilizacion: 'Impermeabilización',
+                general: 'Hogar y Obras en General'
+            };
+            
+            document.getElementById('calc-details').innerText = `Referencia: $${rate.toLocaleString('es-AR')} / m² (${sqm} m² de ${serviceNames[service]})`;
+
+            const namePart = clientName ? ` Mi nombre es ${clientName}.` : '';
+            const msg = `Hola Andrés, estuve utilizando la calculadora de tu web y quisiera consultar por un trabajo de ${serviceNames[service]} de ${sqm} m². El presupuesto estimativo indicado fue de $${total.toLocaleString('es-AR')}.${namePart} Me gustaría recibir una cotización definitiva.`;
+            const waUrl = `https://wa.me/5493442546737?text=${encodeURIComponent(msg)}`;
+            document.getElementById('whatsapp-calc-btn').setAttribute('href', waUrl);
+        }
+
+        function openConfigModal() {
+            const rates = getRates();
+            document.getElementById('rate-pintura').value = rates.pintura;
+            document.getElementById('rate-revestimientos').value = rates.revestimientos;
+            document.getElementById('rate-impermeabilizacion').value = rates.impermeabilizacion;
+            document.getElementById('rate-general').value = rates.general;
+            document.getElementById('config-modal').classList.remove('hidden');
+        }
+
+        function closeConfigModal() {
+            document.getElementById('config-modal').classList.add('hidden');
+        }
+
+        function saveRates() {
+            const newRates = {
+                pintura: parseFloat(document.getElementById('rate-pintura').value) || 0,
+                revestimientos: parseFloat(document.getElementById('rate-revestimientos').value) || 0,
+                impermeabilizacion: parseFloat(document.getElementById('rate-impermeabilizacion').value) || 0,
+                general: parseFloat(document.getElementById('rate-general').value) || 0
+            };
+            localStorage.setItem('ag_rates', JSON.stringify(newRates));
+            closeConfigModal();
+            calculateBudget();
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('contact-name').value;
+            const phone = document.getElementById('contact-phone').value;
+            const service = document.getElementById('contact-service').value;
+            const sqm = document.getElementById('contact-sqm').value;
+            const msg = document.getElementById('contact-msg').value;
+
+            const sqmText = sqm ? ` (${sqm} m²)` : '';
+            const text = `Hola Andrés, mi nombre es ${name} (Tel: ${phone}). Quisiera consultar por un trabajo de ${service}${sqmText}. Detalle: ${msg}`;
+            const url = `https://wa.me/5493442546737?text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank');
+        }
+
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            const title = element.querySelector('h3').innerText;
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox-caption').innerText = title;
+            document.getElementById('lightbox').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+        }
+
+        window.onload = function() {
+            calculateBudget();
+        };
+    </script>
+</body>
+</html>
